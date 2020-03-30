@@ -32,22 +32,22 @@ npm run watch-node	#starts node server and watch for changes in .js file
 ## Project Structure
 
 	- src/
-	  - common
+	  - common/
 	    - exceptions.common.ts
-		- utils.common.ts 
+	    - utils.common.ts 
 	  - controllers/
 	    - user/
-		  - user.controller.ts
-		- index.ts
+	      - user.controller.ts
+	    - index.ts
 	  - repository/
 	    - user/
-		  - user.repository.ts
-		- index.ts
+	      - user.repository.ts
+	    - index.ts
 	  - schema/
 	    - user/
-		  - user.schema.ts
-		  - user.typedef.ts
-		- index.ts
+	      - user.schema.ts
+	      - user.typedef.ts
+	    - index.ts
 	  - app.ts
 	  - routes.ts
 	  - server.ts
