@@ -1,0 +1,1 @@
+export const getStatusCode = (code: number) => (code >= 100 && code < 600) ? code : 500

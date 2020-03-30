@@ -1,7 +1,8 @@
 import mongoose, {Model} from 'mongoose'
-import { UserModel } from './User.Typedef'
+import _ from 'lodash'
+import { UserModel } from './user.typedef'
 
-const UserSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
     f_name: String,
     l_name: String,
     email: {
@@ -21,6 +22,8 @@ const UserSchema = new mongoose.Schema({
     }]
 })
 
-const User: Model<UserModel> = mongoose.model<UserModel>('User', UserSchema)
+userSchema.methods.toJSON = function(){
+    return _.pick(this.toObject(), ['_id', 'f_name', 'l_name', 'email'])
+}
 
-export {User}
+export const User: Model<UserModel> = mongoose.model<UserModel>('User', userSchema)

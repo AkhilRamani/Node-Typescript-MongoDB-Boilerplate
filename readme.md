@@ -23,44 +23,54 @@ npm install
 ```
 MONGODB_URI=<Your_MongoDB_URL>
 ```
+ - Running app during development phase
+```bash
+npm run watch-ts	#buils and watch for .ts file changes
+npm run watch-node	#starts node server and watch for changes in .js file 
+```
 
 ## Project Structure
 
-	 - src/
-		 - Controllers/
-			 - User/
-				 - User.Controller.ts
-			 - index.ts
-		 - Repository/
-			 - User/
-				 - User.Repository.ts
-			 - index.ts
-		 - Schema/
-			 - User/
-				 - User.Schema.ts
-				 - User.Typedef.ts
-			 - index.ts
-		 - app.ts
-		 - routes.ts
-		 - server.ts
-	 - .env
-	 - .gitignore
-	 - package.json
-	 - tsconfig.json
-	 - tslint.json 
+	- src/
+	  - common
+	    - exceptions.common.ts
+		- utils.common.ts 
+	  - controllers/
+	    - user/
+		  - user.controller.ts
+		- index.ts
+	  - repository/
+	    - user/
+		  - user.repository.ts
+		- index.ts
+	  - schema/
+	    - user/
+		  - user.schema.ts
+		  - user.typedef.ts
+		- index.ts
+	  - app.ts
+	  - routes.ts
+	  - server.ts
+	- .env
+	- .gitignore
+	- package.json
+	- tsconfig.json
+	- tslint.json 
 
 
 ## Usage Rules
 
  - Defile schema of required collection in Schama file and give name as
-   per below **<*collection_name*>.Schema.ts**
+   per below **<*collection_name*>.schema.ts**
 
-- Defile Type Definition in **<*collection_name*>.Typedef.ts** file.
+- Defile Type Definition of Model in **<*collection_name*>.typedef.ts** file.
 - Create folders as per your collection_name in Controllers, Repository folders.
-- Do not write DB interection logic outside **Repository** folder.
+- Do not write DB interection logic outside **repository** folder.
 - Export every module through **index.ts** file.
 - Create new Routes inside **routes.ts** file.
 - Use **.env** file for private static variables.
+- Create http errors and exceptions in **exceptions.common.ts** file.
+- Use **utils.common.ts** file to define utility functions.
 
 
 ## Contributing
